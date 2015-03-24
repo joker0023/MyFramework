@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<display-name>MyFrameWork</display-name>	
+  
+	<!-- INIT SATRT -->
+	<listener>
+		<display-name>InitListener</display-name>
+		<listener-class>com.joker.myfw.init.Init</listener-class>
+	</listener>
+	<!-- INIT END -->
+
+	<!-- FILTER START -->
+
+	<!-- ENCODING FILTER START -->
+	<filter>
+		<filter-name>EcodingFilter</filter-name>
+		<filter-class>com.joker.myfw.filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>EcodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- ENCODING FILTER END -->
+
+	<!-- SECURITY FILTER START -->
+	<filter>
+		<filter-name>CommFilter</filter-name>
+		<filter-class>com.joker.myfw.filter.CommFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CommFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- SECURITY FILTER END -->
+	
+	<!-- SECURITY FILTER START -->
+	<filter>
+		<filter-name>WebFilter</filter-name>
+		<filter-class>com.joker.myfw.filter.WebFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>WebFilter</filter-name>
+		<url-pattern>/web/*</url-pattern>
+	</filter-mapping>
+	<!-- SECURITY FILTER END -->
+	
+	<!-- SECURITY FILTER START -->
+	<filter>
+		<filter-name>ConsoleFilter</filter-name>
+		<filter-class>com.joker.myfw.filter.ConsoleFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ConsoleFilter</filter-name>
+		<url-pattern>/console/*</url-pattern>
+	</filter-mapping>
+	<!-- SECURITY FILTER END -->
+	
+	<!-- IMPORT STRUTS2 FILTER START -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>
+			org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- IMPORT STRUTS2 FILTER END -->
+	
+	<!-- ERROR PAGE START -->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error/404.jsp</location>
+	</error-page>
+	<!--  
+	<error-page>
+		<error-code>500</error-code>
+		<location>/error/500.jsp</location>
+	</error-page>
+	-->
+	<!-- ERROR PAGE END -->
+	
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+	
+	<welcome-file-list>
+	  <welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

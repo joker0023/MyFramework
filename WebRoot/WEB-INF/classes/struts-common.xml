@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+			"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="default" namespace="/" extends="struts-default">
+	    
+    </package>
+    
+	<package name="validation" namespace="/validation" extends="default">
+	    <action name="*" class="com.joker.myfw.action.validation.ValidationAction" method="{1}">
+	        <result name="console_login">/WEB-INF/validation/console/login.jsp</result>
+	        <result name="console_logout">/WEB-INF/validation/console/logout.jsp</result>
+	        <result name="console_login_ok" type="redirectAction">
+	            <param name="actionName">console_index.do</param>
+				<param name="namespace">/console</param>
+	        </result>
+	        <result name="web_login">/WEB-INF/validation/web/login.jsp</result>
+	        <result name="web_logout">/index.jsp</result>
+	        <result name="web_registered">/WEB-INF/validation/web/registered.jsp</result>
+	        <result name="web_findpwd">/WEB-INF/validation/web/findpwd.jsp</result>
+	        <result name="web_changepwd">/WEB-INF/validation/web/changepwd.jsp</result>
+	        <result name="web_login_ok" type="redirect">/index.jsp</result>
+	        <result name="web_mail_confirm">/WEB-INF/validation/web/mailconfirmresult.jsp</result>
+	    </action>
+	</package>
+</struts>

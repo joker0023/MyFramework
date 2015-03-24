@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+			"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="console" namespace="/console" extends="default">
+	    <action name="console_*" class="com.joker.myfw.action.console.ConsoleAction" method="{1}">
+	        <result name="index">/WEB-INF/console/index.jsp</result>
+	        <result name="home">/WEB-INF/console/home.jsp</result>
+	        <result name="logout" type="redirectAction">
+	            <param name="actionName">console_login.do</param>
+				<param name="namespace">/validation</param>
+	        </result>
+	    </action>
+	</package>
+	<package name="consoleuser" namespace="/console/consoleuser" extends="default">
+	    <action name="*" class="com.joker.myfw.action.console.ConsoleUserManage" method="{1}">
+	        <result name="list">/WEB-INF/console/consoleuser/list.jsp</result>
+	        <result name="edit">/WEB-INF/console/consoleuser/editmodal.jsp</result>
+	    </action>
+	</package>
+	<package name="webuser" namespace="/console/webuser" extends="default">
+	    <action name="*" class="com.joker.myfw.action.console.WebUserManage" method="{1}">
+	        <result name="list">/WEB-INF/console/webuser/list.jsp</result>
+	        <result name="detail">/WEB-INF/console/webuser/detailmodal.jsp</result>
+	    </action>
+	</package>
+	<package name="actionrecord" namespace="/console/actionrecord" extends="default">
+	    <action name="*" class="com.joker.myfw.action.console.ActionRecordAction" method="{1}">
+	        <result name="list">/WEB-INF/console/actionrecord/list.jsp</result>
+	    </action>
+	</package>
+	<package name="log" namespace="/console/log" extends="default">
+	    <action name="*" class="com.joker.myfw.action.console.LogAction" method="{1}">
+	        <result name="info">/WEB-INF/console/log/info.jsp</result>
+	    </action>
+	</package>
+	<package name="permission" namespace="/console/permission" extends="default">
+	    <action name="*" class="com.joker.myfw.action.console.PermissionAction" method="{1}">
+	        <result name="list">/WEB-INF/console/permission/list.jsp</result>
+	    </action>
+	</package>
+</struts>

@@ -1,0 +1,39 @@
+.canvasContainer {
+	position: relative;
+	display: inline-block;
+	font-size: 0;
+}
+.mainCanvas {
+	
+}
+.moduleCanvasContainer {
+	position: absolute;
+}
+.moduleCanvas {
+	
+}
+.subCanvas {
+	position: absolute;
+}
+.textCanvasContainer {
+	position: absolute;
+}
+.textCanvas {
+	position: absolute;
+}
+.subTextarea {
+	position: absolute;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+	display: block;
+	transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+	margin: 0;
+	display: none;
+	background: none;
+}
+.subTextarea:FOCUS {
+	border-color: #66afe9;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+	outline: 0 none;
+}

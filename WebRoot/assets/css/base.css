@@ -1,0 +1,30 @@
+body {
+    background-color: #F7FCFF;
+    margin: 0;
+    padding: 0;
+}
+*, *:HOVER, *:ACTIVE, *:FOCUS{
+	outline: none;
+}
+.btn:FOCUS,.btn:ACTIVE:FOCUS,.btn.active:FOCUS{
+	outline: none;
+}
+a, a:FOCUS, a:ACTIVE:FOCUS, a.active:FOCUS{
+	outline: none;
+}
+input[type="file"]:FOCUS,input[type="radio"]:FOCUS,input[type="checkbox"]:FOCUS {
+	outline: none;
+}
+
+#alert-tip{
+	height: 40px;
+	background-color: #dff0d8;
+	padding: 10px;
+	position: fixed;
+	left: 40%;
+	top: 30%;;
+	color: #777;
+	opacity: 0.9;
+	display: none;
+	z-index: 1100;
+}
